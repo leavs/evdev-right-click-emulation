@@ -1,0 +1,22 @@
+# install packages
+sudo apt-get update
+sudo apt-get install libevdev-dev
+
+# compile
+make clean
+make all
+
+# install
+sudo make install
+sudo usermod -G 'input' -a <user name> //not root
+sudo reboot
+
+
+# other tools
+# find touchscreen name
+./findtouch.sh
+
+# Add the follow to evdev-rce.service to ignore other input device
+
+[Service]
+Environment="TOUCH_DEVICE_WHITELIST=goodix-ts"

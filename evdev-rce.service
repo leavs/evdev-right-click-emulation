@@ -1,0 +1,9 @@
+[Unit]
+Description=Event Device Right Click Emulation
+
+[Service]
+Environment="LONG_CLICK_INTERVAL=1000 LONG_CLICK_FUZZ=300"
+ExecStart = /usr/local/bin/evdev-rce
+
+[Install]
+WantedBy=multi-user.target
